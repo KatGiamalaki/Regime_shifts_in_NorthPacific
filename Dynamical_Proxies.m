@@ -38,4 +38,7 @@ end
 
 toc
 
+filename = 'Dyn_prox.mat';
+save(filename)
+
 
