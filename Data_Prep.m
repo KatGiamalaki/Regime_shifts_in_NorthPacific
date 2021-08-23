@@ -29,5 +29,8 @@ NP_slp=slp(ji,ij,:);
 
 %% 
 
-clearvars -except NP_slp
+clearvars -except NP_slp lon lat
+
+filename = 'NP_slp.mat';
+save(filename)
 
