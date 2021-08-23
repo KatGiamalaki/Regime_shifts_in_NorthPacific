@@ -10,11 +10,11 @@ slp = NaN * ones(size(lon,1),size(lat,1),total_ndays);
 %% Upload data into one array dims: lon * lat * total_ndays
 
 a = 1;
-for ii = 1948:1950
+for ii = 1948:2016
     temp_slp = ncread(['slp.' num2str(ii) '.nc'],'slp');
     if size(temp_slp,3)==365
         slp(:,:,a:a+364) = temp_slp;
-        a  =a+365;
+        a  = a+365;
     elseif size(temp_slp,3)==366
         slp(:,:,a:a+365) = temp_slp;
         a = a+366;
@@ -27,7 +27,7 @@ ji = find(lon>100 & lon<245);
 ij = find(lat<65 & lat>15);
 NP_slp=slp(ji,ij,:);
 
-%%
+%% 
 
 clearvars -except NP_slp
 
